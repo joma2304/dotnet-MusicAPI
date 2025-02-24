@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MusicAPI.Models
 {
@@ -13,6 +14,12 @@ namespace MusicAPI.Models
         public int Length { get; set; }
         [Required]
         public string? Category { get; set; }
+
+        //Koppling till Album
+        public int AlbumId { get; set; } // Foreign Key
+        [JsonIgnore]
+        public Album? Album { get; set; } // Navigation Property
+
 
     }
 }
