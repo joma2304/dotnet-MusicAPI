@@ -25,7 +25,7 @@ namespace MusicAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Music>>> GetMusic()
         {
-            return await _context.Music.Include(b => b.Album).ToListAsync();
+            return await _context.Music.Include(b => b.Album).ToListAsync(); //Returnera albumID med
         }
 
         // GET: api/Music/5
